@@ -10,11 +10,6 @@ class DesignPage extends React.Component<any> {
   public state = {
     files: [],
     image: '',
-    text: ''
-  };
-
-  public handleTextChange = (e: any) => {
-    this.setState({text: e.target.value});
   };
 
   public handleFileDrop = (files: any) => {
@@ -30,20 +25,12 @@ class DesignPage extends React.Component<any> {
       <Col className='button_left' lg={2} md={2}>
         <Tools
           files={this.state.files}
-          onTextChange={this.handleTextChange}
           onFileDrop={this.handleFileDrop}
         />
       </Col>
       <Col lg={8} md={8}>
         <Canvas
-          text={this.state.text}
           image={this.props.image}
-        />
-      </Col>
-      <Col className='button_right' lg={2} md={2}>
-        <Tools
-          files={this.state.files}
-          onTextChange={this.handleTextChange}
           onFileDrop={this.handleFileDrop}
         />
       </Col>
