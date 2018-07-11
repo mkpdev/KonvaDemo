@@ -8,12 +8,17 @@ import {
   TabPane
 } from 'reactstrap';
 
-class Tools extends React.Component<any> {
-  public state = {
-    activeTab: '1'
+interface IState {
+  activeTab: number;
+}
+
+
+class Tools extends React.Component<{onFileDrop: (args: {}) => void}, IState> {
+  public state: IState = {
+    activeTab: 1
   };
 
-  public toggle = (tab: any) => {
+  public toggle = (tab: number) => {
     if (this.state.activeTab !== tab) {
       this.setState({
         activeTab: tab
@@ -22,17 +27,19 @@ class Tools extends React.Component<any> {
   };
 
   public render() {
+    const {activeTab}  = this.state;
+    const {onFileDrop} = this.props;
     return (
       <Row>
         <Col xs={12}>
           <div>
-            <TabContent activeTab={this.state.activeTab}>
+            <TabContent activeTab={activeTab} >
               <TabPane tabId="2">
                 <Row>
                   <Col sm="12">
                     <FormGroup>
                       <button className="dropzone-container1">
-                        <Dropzone style={{ width: '150px', height: '30px'}} onDrop={this.props.onFileDrop}>
+                        <Dropzone style={{ width: '150px', height: '30px'}} onDrop={onFileDrop}>
                           Select picture
                         </Dropzone>
                       </button>

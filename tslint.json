@@ -6,5 +6,11 @@
       "node_modules/**/*.ts"
     ]
   },
-  "rules": {}
+  "rules": {},
+  "options": {
+    "rulesDirectory": "node_modules/tslint-microsoft-contrib"
+  },
+  "files": {
+    "src": ["src/"]
+  }
 }

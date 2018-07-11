@@ -5,14 +5,18 @@ import { showTask } from './action/index';
 import Canvas from './Canvas';
 import Tools from './Tools';
 
-class DesignPage extends React.Component<any> {
+interface IState {
+  files: {};
+  image: string;
+}
 
-  public state = {
-    files: [],
-    image: '',
+class DesignPage extends React.Component <{showTask: (args: {}) => void },IState> {
+  public state: IState = {
+    files: {},
+    image: ''
   };
 
-  public handleFileDrop = (files: any) => {
+  public handleFileDrop = (files: {}) => {
     this.setState({
       files,
       image: files[0].preview
@@ -24,13 +28,12 @@ class DesignPage extends React.Component<any> {
     return <Row className='manual_grid'>
       <Col className='button_left' lg={2} md={2}>
         <Tools
-          files={this.state.files}
           onFileDrop={this.handleFileDrop}
         />
       </Col>
       <Col lg={8} md={8}>
         <Canvas
-          image={this.props.image}
+          image={this.state.image}
           onFileDrop={this.handleFileDrop}
         />
       </Col>
