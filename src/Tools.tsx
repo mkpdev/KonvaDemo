@@ -13,7 +13,7 @@ interface IState {
 }
 
 
-class Tools extends React.Component<{onFileDrop: (args: {}) => void}, IState> {
+class Tools extends React.Component<any, IState> {
   public state: IState = {
     activeTab: 1
   };

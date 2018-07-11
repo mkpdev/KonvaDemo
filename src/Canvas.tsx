@@ -7,12 +7,12 @@ import {
 } from 'reactstrap';
 import DesignImage from "./DesignImage";
 
-interface IProps {
-  image: string;
-  onFileDrop: (args: {}) => void;
-}
+// interface IProps {
+//   readonly image: string;
+//   onFileDrop: (args: any) => void;
+// }
 
-class Canvas extends React.Component<IProps> {
+class Canvas extends React.Component<any> {
   public render(){
     const{ image, onFileDrop } = this.props;
     const flag = image !== '';

@@ -1,12 +1,15 @@
-import { shallow } from "enzyme";
+import { configure, shallow } from "enzyme";
+import * as Adapter from 'enzyme-adapter-react-16';
 import * as React from 'react';
 import Dropzone from 'react-dropzone';
 import { Col, FormGroup, Row, TabContent, TabPane} from 'reactstrap';
 import Tools from '../Tools';
 
-it('Canvas Page renders without crashing', () => {
+configure({ adapter: new Adapter() });
+
+it('Tools Page renders without crashing', () => {
   const onFileDrop = jest.fn();
-  shallow(<Tools />).contains(<Row>
+  shallow(<Tools  />).contains(<Row>
     <Col xs={12}>
       <div>
         <TabContent>
