@@ -1,3 +1,6 @@
+/**
+ * Tools.tsx file
+ */
 import * as React from 'react';
 import Dropzone from 'react-dropzone';
 import {
@@ -12,8 +15,7 @@ interface IState {
   activeTab: number;
 }
 
-
-class Tools extends React.Component<any, IState> {
+export class Tools extends React.Component< any, IState> {
   public state: IState = {
     activeTab: 1
   };
@@ -34,11 +36,11 @@ class Tools extends React.Component<any, IState> {
         <Col xs={12}>
           <div>
             <TabContent activeTab={activeTab} >
-              <TabPane tabId="2">
+              <TabPane tabId='2'>
                 <Row>
-                  <Col sm="12">
+                  <Col sm='12'>
                     <FormGroup>
-                      <button className="dropzone-container1">
+                      <button className='dropzone-container1'>
                         <Dropzone style={{ width: '150px', height: '30px'}} onDrop={onFileDrop}>
                           Select picture
                         </Dropzone>
@@ -54,5 +56,3 @@ class Tools extends React.Component<any, IState> {
     );
   }
 }
-
-export default Tools;

@@ -1,16 +1,19 @@
+/**
+ * DesignPage.tsx file
+ */
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Col, Row } from 'reactstrap';
 import { showTask } from './action/index';
-import Canvas from './Canvas';
-import Tools from './Tools';
+import {Canvas} from './Canvas';
+import { Tools } from './Tools';
 
 interface IState {
   files: {};
   image: string;
 }
 
-class DesignPage extends React.Component <{showTask: (args: {}) => void },IState> {
+class DesignPage extends React.Component<{showTask: (args: {}) => void}, IState> {
   public state: IState = {
     files: {},
     image: ''
@@ -41,17 +44,17 @@ class DesignPage extends React.Component <{showTask: (args: {}) => void },IState
   }
 }
 
-const mapStateToProps = (state: any) => ({
-  image: state.Task.image,
-})
+// const mapStateToProps = (state: any) => ({
+//   image: state.Task.image
+// });
 
 const mapDispatchToProps = (dispatch: any) => ({
   showTask : (task: any) => {
-    dispatch(showTask(task))
-  },
-})
+    dispatch(showTask(task));
+  }
+});
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
-)(DesignPage)
+)(DesignPage);

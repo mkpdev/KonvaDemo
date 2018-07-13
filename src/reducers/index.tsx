@@ -1,9 +1,11 @@
+/**
+ * index.tsx file
+ */
 import { combineReducers } from 'redux';
-import Task from './task';
+import task from './task';
 
 const todoApp = combineReducers({
-  Task,
-})
+  task
+});
 
-export default todoApp
-
+export default todoApp;

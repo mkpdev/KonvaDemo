@@ -1,3 +1,6 @@
+/**
+ * DesignImage.tsx file
+ */
 import React, {Component} from 'react';
 import {Image} from 'react-konva';
 

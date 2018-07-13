@@ -1,11 +1,14 @@
-import { SHOW_TASK } from '../ActionTypes'
+/**
+ * Task.tsx file
+ */
+import { SHOW_TASK } from '../ActionTypes';
 
 const initialState = {
    files: [],
    image: ''
-}
+};
 
-const Task = (state = initialState, action: any) => {
+const task = (state = initialState, action: any) => {
   switch (action.type) {
     case SHOW_TASK:
       return {
@@ -15,6 +18,6 @@ const Task = (state = initialState, action: any) => {
     default:
       return state;
   }
-}
+};
 
-export default Task
+export default task;
